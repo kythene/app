@@ -1,78 +1,62 @@
-# Kythene (self-host)
+# Kythene, self-hosted
 
-Run [Kythene](https://www.kythene.com) - the shared context layer for AI-native
-teams - on your own infrastructure. Your data stays inside your boundary; your
-team's assistants connect to your host rather than ours.
+Kythene is where a team and their AI instances work on each other's output: publish any result, review it down to the individual block, approve it, and have the feedback land back in the AI that made it, with the reviewed work accreting into a memory the whole team recalls.
 
-> This repository holds **container images and docs only** - the source lives in
-> a private repository.
+Self-hosting keeps all of that inside your own network - your servers, your data,
+including the embeddings behind recall. This repository is how you run Kythene on
+your own infrastructure: the published container image, and the guide that goes
+with it.
 
-## Run
+> **Just want it hosted?** Sign up at [kythene.com](https://kythene.com) and skip
+> all of this. There is a free tier for one person.
 
-Images are published to the GitHub Container Registry:
+## The image
 
-```sh
-docker pull ghcr.io/kythene/app:latest    # or pin a version, e.g. :v0.41.3
+```
+ghcr.io/kythene/app:latest
 ```
 
-You will need PostgreSQL and an S3-compatible object store alongside it. A
-reference `docker-compose`, the first-run admin setup, licence entry and the
-full configuration reference are in the
-[self-hosting docs](https://www.kythene.com/docs/self-host).
+Pin a release for a reproducible deploy, for example
+`ghcr.io/kythene/app:v0.82.0`. The image is the same Kythene the hosted
+service runs; a self-host instance serves its MCP endpoint on your own domain.
 
-## Licensing
+## Run it
 
-Self-host runs under a signed **offline** licence - it is verified locally and
-the install does not phone home.
+You need Docker, a Postgres with the `vector` extension, an S3-compatible object
+store, and a reverse proxy terminating TLS in front of the app (the app itself
+serves plain HTTP - never expose its port directly). The complete single-node
+stack (app plus its own Postgres and MinIO), the annotated environment template
+and the step-by-step guide live here:
 
-- **Free self-host** is for a **single signed-in user**, with unlimited storage
-  on your own infrastructure and the full core product.
-- **Enterprise self-host** covers your whole team and adds SSO, audit logging,
-  support and compliance help, including air-gapped and data-residency
-  deployments.
+**[www.kythene.com/self-hosting](https://www.kythene.com/self-hosting)** ·
+**[www.kythene.com/docs/self-host](https://www.kythene.com/docs/self-host)**
 
-AI instances and review guests never count as users on any plan - only signed-in
-humans do.
+On boot the app applies its migrations forward (idempotent) and starts serving.
+On a fresh instance the first person in becomes the administrator.
 
-Details and how to request a licence: [www.kythene.com/self-hosting](https://www.kythene.com/self-hosting).
+## Self-host tiers
 
-## Your data stays yours
+- **Free self-host** - Free (one signed-in user)
+- **Self-host Team** - $150 per user / year (billed annually · from 5 users)
+- **Enterprise self-host** - Contact us
 
-Everything in a workspace exports to a readable tree - markdown with
-frontmatter, binaries as themselves, no proprietary format - and imports back
-into any Kythene instance. You can move from hosted to self-hosted, or the other
-way, or simply keep your own backups:
+A free self-host instance needs no licence key. A licence lifts the seat cap to
+the seats your plan includes and unlocks its entitlements. Licence validation is
+offline - only the optional renewal check is a network call - so a paid instance
+can run fully air-gapped with that check turned off.
 
-```sh
-kythe export --space acme --archive acme-backup.tar.gz
-```
-
-The [`kythe` CLI](https://github.com/kythene/cli) is the tool for that.
+Buy Self-host Team at
+[kythene.com/buy?sku=selfhost-team](https://kythene.com/buy?sku=selfhost-team&cycle=annual),
+or [talk to us](https://www.kythene.com/self-hosting/request) about Enterprise
+self-host.
 
 ## Connect an assistant
 
-Point your client at your own host's MCP endpoint rather than ours:
+Kythene is a remote, streamable-HTTP MCP server. Point your client at your
+instance's endpoint (`https://<your-domain>/mcp/kythene`) and it registers itself
+over OAuth - there is no key to copy.
 
-```
-https://kythene.example.com/mcp/kythene
-```
+## Licence
 
-Clients register themselves over OAuth - there is no key to distribute. Per-client
-steps are in [getting started](https://www.kythene.com/docs/getting-started).
-
-## Docs
-
-- [Self-hosting](https://www.kythene.com/docs/self-host)
-- [Getting started](https://www.kythene.com/docs/getting-started)
-- [Concepts](https://www.kythene.com/docs/concepts)
-- [MCP tool reference](https://www.kythene.com/docs/reference-mcp)
-
-## Issues
-
-Deployment problems and feature requests are welcome on this repository's
-[issues](https://github.com/kythene/app/issues), or via
-[the contact form](https://www.kythene.com/contact).
-
----
-
-*Make it known.*
+Kythene is proprietary software - see [LICENSE](./LICENSE). This repository is the
+public self-host landing page and carries no source.

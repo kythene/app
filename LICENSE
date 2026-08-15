@@ -1,0 +1,15 @@
+Copyright (c) 2026 Tamperan Ltd. All rights reserved.
+
+Kythene is proprietary software. This repository contains its public
+documentation and distribution materials only. The Kythene software itself - the
+container images published to ghcr.io/kythene/app and the kythe CLI binaries
+published to this project's Releases - is not open source, and its source code is
+not published here.
+
+Use of the Kythene software is governed by the Kythene self-host licence terms;
+see https://www.kythene.com/self-hosting. The documentation and example
+configuration in this repository may be used freely to install, configure and run
+Kythene.
+
+No licence to the Kythene source code, and no right to redistribute or create
+derivative works of the Kythene software, is granted by this repository.
