@@ -17,7 +17,7 @@ ghcr.io/kythene/app:latest
 ```
 
 Pin a release for a reproducible deploy, for example
-`ghcr.io/kythene/app:v0.92.0`. The image is the same Kythene the hosted
+`ghcr.io/kythene/app:v0.94.0`. The image is the same Kythene the hosted
 service runs; a self-host instance serves its MCP endpoint on your own domain.
 
 ## Run it
