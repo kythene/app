@@ -17,7 +17,7 @@ ghcr.io/kythene/app:latest
 ```
 
 Pin a release for a reproducible deploy, for example
-`ghcr.io/kythene/app:v0.138.0`. The image is the same Kythene the hosted
+`ghcr.io/kythene/app:v0.139.0`. The image is the same Kythene the hosted
 service runs; a self-host instance serves its MCP endpoint on your own domain.
 
 ## Run it
@@ -25,7 +25,7 @@ service runs; a self-host instance serves its MCP endpoint on your own domain.
 You need Docker, a Postgres with the `vector` extension, an S3-compatible object
 store, and a reverse proxy terminating TLS in front of the app (the app itself
 serves plain HTTP - never expose its port directly). The complete single-node
-stack (app plus its own Postgres and MinIO), the annotated environment template
+stack (app plus its own Postgres and Garage), the annotated environment template
 and the step-by-step guide live here:
 
 **[www.kythene.com/self-hosting](https://www.kythene.com/self-hosting)** ·
