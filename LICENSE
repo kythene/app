@@ -6,10 +6,10 @@ container images published to ghcr.io/kythene/app and the kythe CLI binaries
 published to this project's Releases - is not open source, and its source code is
 not published here.
 
-Use of the Kythene software is governed by the Kythene self-host licence terms;
-see https://www.kythene.com/self-hosting. The documentation and example
-configuration in this repository may be used freely to install, configure and run
-Kythene.
+Use of the Kythene software under a Self-host Team licence is governed by the
+Kythene self-host licence terms at https://www.kythene.com/self-host-licence/.
+The documentation and example configuration in this repository may be used
+freely to install, configure and run Kythene.
 
 No licence to the Kythene source code, and no right to redistribute or create
 derivative works of the Kythene software, is granted by this repository.
