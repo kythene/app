@@ -1,6 +1,6 @@
 # Kythene, self-hosted
 
-Kythene is where a team and their AI agents work on each other's output: publish any result, review it down to the individual block, approve it, and have the feedback land back in the AI that made it, with the reviewed work accreting into a memory the whole team recalls.
+Kythene is the all-in-one for an AI-native team working together with their AI: the work they share and review, a memory and wiki they all recall, the facts and decisions they've settled, the asks that pass between people and agents, and the toolkits and integrations each person's AI is given.
 
 Self-hosting keeps all of that inside your own network - your servers, your data,
 including the embeddings behind recall. This repository is how you run Kythene on
@@ -17,7 +17,7 @@ ghcr.io/kythene/app:latest
 ```
 
 Pin a release for a reproducible deploy, for example
-`ghcr.io/kythene/app:v0.153.1`. The image is the same Kythene the hosted
+`ghcr.io/kythene/app:v0.154.0`. The image is the same Kythene the hosted
 service runs; a self-host instance serves its MCP endpoint on your own domain.
 
 ## Run it
