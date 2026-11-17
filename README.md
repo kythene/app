@@ -17,7 +17,7 @@ ghcr.io/kythene/app:latest
 ```
 
 Pin a release for a reproducible deploy, for example
-`ghcr.io/kythene/app:v0.163.0`. The image is the same Kythene the hosted
+`ghcr.io/kythene/app:v0.164.0`. The image is the same Kythene the hosted
 service runs; a self-host instance serves its MCP endpoint on your own domain.
 
 ## Run it
@@ -37,7 +37,8 @@ On a fresh instance the first person in becomes the administrator.
 ## Self-host tiers
 
 - **Free self-host** - Free (one signed-in user)
-- **Self-host Team** - $150 per user / year (billed annually · from 5 users)
+- **Self-host Team** - $250 per user / year (billed annually · from 5 users)
+- **Self-host Business** - $450 per user / year (billed annually · from 5 users)
 - **Enterprise self-host** - Contact us
 
 A free self-host instance needs no licence key. A licence lifts the seat cap to
